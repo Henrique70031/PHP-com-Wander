@@ -1,0 +1,21 @@
+{
+    "name": "aluno/modelagem",
+    "description": "Aprendizagem de Modelagem SENAI",
+    "require": {
+        "components/jquery": "^3.3"
+    },
+    "authors": [
+        {
+            "name": "Henrique Klayton",
+            "email": "henrique70031@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Model\\": "./src/Model",
+            "Controller\\": "./src/Controller",
+            "Persistence\\": "./src/Persistence"
+        }
+    }
+}
