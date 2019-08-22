@@ -36,11 +36,20 @@ class ComposerStaticInitfab4bac83472d11ed3e60f6348fda361
         ),
     );
 
+    public static $classMap = array (
+        'Model\\Aluno' => __DIR__ . '/../..' . '/src/Model/Aluno.php',
+        'Model\\Disciplina' => __DIR__ . '/../..' . '/src/Model/Disciplina.php',
+        'Model\\Professor' => __DIR__ . '/../..' . '/src/Model/Professor.php',
+        'Model\\Turma' => __DIR__ . '/../..' . '/src/Model/Turma.php',
+        'Persistence\\Connection' => __DIR__ . '/../..' . '/src/Persistence/Connection.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitfab4bac83472d11ed3e60f6348fda361::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitfab4bac83472d11ed3e60f6348fda361::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitfab4bac83472d11ed3e60f6348fda361::$classMap;
 
         }, null, ClassLoader::class);
     }
